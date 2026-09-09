@@ -1,5 +1,8 @@
 *** Sales by State Report for WooCommerce Changelog ***
 
+2026-09-09 - version 1.0.2
+* Excluded a stray .wordpress-org directory from the shipped plugin files.
+
 2026-09-01 - version 1.0.1
 * Tested up to WordPress 7.1.
 * Excluded doc-sync source files from the WP.org package.

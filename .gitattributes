@@ -1,6 +1,7 @@
 .gitattributes export-ignore
 .gitignore export-ignore
 /.github export-ignore
+/.wordpress-org export-ignore
 phpcs.xml.dist export-ignore
 docs.md export-ignore
 /docs export-ignore
