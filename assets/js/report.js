@@ -189,7 +189,7 @@
 				return String( a.state_name ).localeCompare( String( b.state_name ) );
 			}
 
-			return left < right ? direction : -direction;
+			return direction * ( left - right );
 		} );
 
 		return copy;
@@ -507,7 +507,9 @@
 					label: m.label,
 					isNumeric: true,
 					isSortable: true,
-					required: true
+					required: true,
+					defaultSort: 'net_revenue' === m.key,
+					defaultOrder: 'desc'
 				};
 			} )
 		);
