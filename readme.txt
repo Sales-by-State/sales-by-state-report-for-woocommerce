@@ -5,7 +5,7 @@ Tags: sales-report, sales-by-state, woocommerce, analytics, sales-tax
 Requires at least: 6.4
 Tested up to: 7.1
 Requires PHP: 7.4
-Stable tag: 1.0.2
+Stable tag: 1.0.3
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -110,6 +110,10 @@ Use the [WordPress.org support forum](https://wordpress.org/support/plugin/sales
 
 == Changelog ==
 
+= 1.0.3 =
+* Fixed: the report opened sorted smallest first. It now opens with the top states first, by net sales.
+* Tested up to WooCommerce 11.1.
+
 = 1.0.2 =
 * Excluded a stray .wordpress-org directory from the shipped plugin files.
 
@@ -121,6 +125,9 @@ Use the [WordPress.org support forum](https://wordpress.org/support/plugin/sales
 * Initial release.
 
 == Upgrade Notice ==
+
+= 1.0.3 =
+The report now opens with your top states first.
 
 = 1.0.2 =
 No functional changes.

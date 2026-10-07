@@ -3,7 +3,7 @@
  * Plugin Name:          Sales by State Report for WooCommerce
  * Plugin URI:           https://salesbystate.com/
  * Description:          See a yearly breakdown of WooCommerce sales by state / county / province for a given country, filterable by order status.
- * Version:              1.0.2
+ * Version:              1.0.3
  * Author:               Rodolfo Melogli
  * Author URI:           https://businessbloomer.com/
  * Developer:            Rodolfo Melogli
@@ -15,7 +15,7 @@
  * Requires PHP:         7.4
  * Requires Plugins:     woocommerce
  * WC requires at least: 8.0
- * WC tested up to:      11.0
+ * WC tested up to:      11.1
  * License:              GPL-2.0-or-later
  * License URI:          https://www.gnu.org/licenses/gpl-2.0.html
  *
@@ -25,7 +25,7 @@
 
 defined( 'ABSPATH' ) || exit;
 
-define( 'SBSR_VERSION', '1.0.2' );
+define( 'SBSR_VERSION', '1.0.3' );
 define( 'SBSR_FILE', __FILE__ );
 define( 'SBSR_DIR', plugin_dir_path( __FILE__ ) );
 define( 'SBSR_URL', plugin_dir_url( __FILE__ ) );
