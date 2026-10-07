@@ -1,5 +1,9 @@
 *** Sales by State Report for WooCommerce Changelog ***
 
+2026-10-07 - version 1.0.3
+* Fixed: the report opened sorted smallest first. It now opens with the top states first, by net sales.
+* Tested up to WooCommerce 11.1.
+
 2026-09-09 - version 1.0.2
 * Excluded a stray .wordpress-org directory from the shipped plugin files.
 
