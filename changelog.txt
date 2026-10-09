@@ -1,5 +1,8 @@
 *** Sales by State Report for WooCommerce Changelog ***
 
+2026-10-09 - version 1.0.4
+* New: AI agents can read the report through the WordPress Abilities API (WordPress 6.9 or later), for example with the MCP Adapter plugin. Two read-only abilities: sales-by-state/get-report and sales-by-state/data-check.
+
 2026-10-07 - version 1.0.3
 * Fixed: the report opened sorted smallest first. It now opens with the top states first, by net sales.
 * Tested up to WooCommerce 11.1.
