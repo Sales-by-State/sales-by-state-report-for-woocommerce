@@ -5,7 +5,7 @@ Tags: sales-report, sales-by-state, woocommerce, analytics, sales-tax
 Requires at least: 6.4
 Tested up to: 7.1
 Requires PHP: 7.4
-Stable tag: 1.0.3
+Stable tag: 1.0.4
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -109,6 +109,9 @@ Yes. The plugin declares HPOS compatibility and reads orders from whichever stor
 Use the [WordPress.org support forum](https://wordpress.org/support/plugin/sales-by-state-report-for-woocommerce/) for this plugin.
 
 == Changelog ==
+
+= 1.0.4 =
+* New: AI agents can read the report through the WordPress Abilities API (WordPress 6.9 or later), for example with the MCP Adapter plugin. Two read-only abilities: sales-by-state/get-report and sales-by-state/data-check.
 
 = 1.0.3 =
 * Fixed: the report opened sorted smallest first. It now opens with the top states first, by net sales.
