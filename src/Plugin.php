@@ -47,5 +47,6 @@ class Plugin {
 		( new Api\Controller() )->register();
 		( new Admin\Page() )->register();
 		( new Admin\Tools() )->register();
+		( new Abilities() )->register();
 	}
 }
