@@ -1,6 +1,6 @@
 *** Sales by State Report for WooCommerce Changelog ***
 
-2026-10-15 - version 1.0.5
+2026-10-27 - version 1.0.5
 * Changed: the plugin now requires WordPress 6.9 or later, the version that brought the Abilities API.
 
 2026-10-09 - version 1.0.4
