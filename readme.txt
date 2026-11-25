@@ -5,7 +5,7 @@ Tags: sales-report, sales-by-state, woocommerce, analytics, sales-tax
 Requires at least: 6.9
 Tested up to: 7.1
 Requires PHP: 7.4
-Stable tag: 1.0.5
+Stable tag: 1.0.6
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -109,6 +109,10 @@ Yes. The plugin declares HPOS compatibility and reads orders from whichever stor
 Use the [WordPress.org support forum](https://wordpress.org/support/plugin/sales-by-state-report-for-woocommerce/) for this plugin.
 
 == Changelog ==
+
+= 1.0.6 =
+* Fixed: no more deprecation notice on WooCommerce 11.1 and later when the report checks whether WooCommerce Analytics is on.
+* Tested with WooCommerce 11.3 and WordPress 7.1.
 
 = 1.0.5 =
 * Changed: the plugin now requires WordPress 6.9 or later, the version that brought the Abilities API.
