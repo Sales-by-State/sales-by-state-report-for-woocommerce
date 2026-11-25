@@ -51,7 +51,11 @@ class Page {
 	public static function analytics_available() {
 		$available = false;
 
-		if ( class_exists( '\Automattic\WooCommerce\Admin\Features\Features' ) && method_exists( '\Automattic\WooCommerce\Admin\Features\Features', 'is_enabled' ) ) {
+		if ( method_exists( '\Automattic\WooCommerce\Admin\Features\Features', 'is_analytics_disabled_by_legacy_filters' ) ) {
+			// WooCommerce 11.1+ deprecated is_enabled( 'analytics' ): same check, without the deprecated call.
+			$available = ! \Automattic\WooCommerce\Admin\Features\Features::is_analytics_disabled_by_legacy_filters()
+				&& 'yes' === get_option( 'woocommerce_analytics_enabled', 'yes' );
+		} elseif ( class_exists( '\Automattic\WooCommerce\Admin\Features\Features' ) && method_exists( '\Automattic\WooCommerce\Admin\Features\Features', 'is_enabled' ) ) {
 			$available = (bool) \Automattic\WooCommerce\Admin\Features\Features::is_enabled( 'analytics' );
 		}
 
