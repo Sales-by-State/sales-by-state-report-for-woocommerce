@@ -1,0 +1,47 @@
+name: Update readme and assets on WordPress.org
+
+# Pushes readme.txt and the .wordpress-org images (banner, icon, screenshots) to
+# WordPress.org without a new version. Code changes still go out through a
+# release (deploy.yml). If master holds code that is not released yet, the 10up
+# action refuses to run, so a version bump pushed before its release is safe.
+# The first step checks that case itself and skips, so those pushes stay green.
+on:
+  push:
+    branches: [master]
+    paths:
+      - 'readme.txt'
+      - '.wordpress-org/**'
+  workflow_dispatch:
+
+jobs:
+  readme_assets:
+    name: Push readme and assets to WP.org
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Skip if master has unreleased code
+        id: released
+        run: |
+          tag=$(git describe --tags --abbrev=0)
+          # A commit released straight away gets its tag before this job checks out, while deploy.yml
+          # is still committing it to SVN. deploy.yml pushes the readme and assets itself.
+          if git describe --tags --exact-match HEAD >/dev/null 2>&1; then
+            echo "::notice::this commit is release $tag; deploy.yml pushes readme and assets."
+            echo "deploy=no" >> "$GITHUB_OUTPUT"
+          elif git diff --quiet "$tag" HEAD -- . ':!readme.txt' ':!.wordpress-org' ':!.github'; then
+            echo "deploy=yes" >> "$GITHUB_OUTPUT"
+          else
+            echo "::notice::master has code changes since $tag; the next release deploys readme and assets."
+            echo "deploy=no" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: WordPress.org plugin asset and readme update
+        if: steps.released.outputs.deploy == 'yes'
+        uses: 10up/action-wordpress-plugin-asset-update@stable
+        env:
+          SVN_USERNAME: ${{ secrets.SVN_USERNAME }}
+          SVN_PASSWORD: ${{ secrets.SVN_PASSWORD }}
