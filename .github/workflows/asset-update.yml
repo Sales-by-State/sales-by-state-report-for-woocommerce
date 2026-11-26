@@ -2,7 +2,7 @@ name: Update WordPress.org assets
 
 on:
   push:
-    branches: [main]
+    branches: [master]
     paths:
       - readme.txt
       - .wordpress-org/**
